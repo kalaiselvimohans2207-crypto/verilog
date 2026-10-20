@@ -1,0 +1,73 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x566bec3ab190 .scope module, "tb_decoder2to4" "tb_decoder2to4" 2 1;
+ .timescale 0 0;
+v0x566bec3c03b0_0 .var "a", 0 0;
+v0x566bec3c0450_0 .var "b", 0 0;
+v0x566bec3c0520_0 .net "y", 3 0, L_0x566bec3c0ba0;  1 drivers
+S_0x566bec3ab320 .scope module, "dut" "decoder2to4" 2 4, 3 1 0, S_0x566bec3ab190;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 4 "y";
+L_0x566bec3c0620 .functor NOT 1, v0x566bec3c03b0_0, C4<0>, C4<0>, C4<0>;
+L_0x566bec3c06c0 .functor NOT 1, v0x566bec3c0450_0, C4<0>, C4<0>, C4<0>;
+L_0x566bec3c0780 .functor AND 1, L_0x566bec3c0620, L_0x566bec3c06c0, C4<1>, C4<1>;
+L_0x566bec3c0890 .functor NOT 1, v0x566bec3c03b0_0, C4<0>, C4<0>, C4<0>;
+L_0x566bec3c0930 .functor AND 1, L_0x566bec3c0890, v0x566bec3c0450_0, C4<1>, C4<1>;
+L_0x566bec3c09f0 .functor NOT 1, v0x566bec3c0450_0, C4<0>, C4<0>, C4<0>;
+L_0x566bec3c0aa0 .functor AND 1, v0x566bec3c03b0_0, L_0x566bec3c09f0, C4<1>, C4<1>;
+L_0x566bec3c0d30 .functor AND 1, v0x566bec3c03b0_0, v0x566bec3c0450_0, C4<1>, C4<1>;
+v0x566bec397e70_0 .net *"_ivl_10", 0 0, L_0x566bec3c0890;  1 drivers
+v0x566bec397570_0 .net *"_ivl_12", 0 0, L_0x566bec3c0930;  1 drivers
+v0x566bec396860_0 .net *"_ivl_16", 0 0, L_0x566bec3c09f0;  1 drivers
+v0x566bec3bfc20_0 .net *"_ivl_18", 0 0, L_0x566bec3c0aa0;  1 drivers
+v0x566bec3bfd00_0 .net *"_ivl_2", 0 0, L_0x566bec3c0620;  1 drivers
+v0x566bec3bfe30_0 .net *"_ivl_23", 0 0, L_0x566bec3c0d30;  1 drivers
+v0x566bec3bff10_0 .net *"_ivl_4", 0 0, L_0x566bec3c06c0;  1 drivers
+v0x566bec3bfff0_0 .net *"_ivl_6", 0 0, L_0x566bec3c0780;  1 drivers
+v0x566bec3c00d0_0 .net "a", 0 0, v0x566bec3c03b0_0;  1 drivers
+v0x566bec3c0190_0 .net "b", 0 0, v0x566bec3c0450_0;  1 drivers
+v0x566bec3c0250_0 .net "y", 3 0, L_0x566bec3c0ba0;  alias, 1 drivers
+L_0x566bec3c0ba0 .concat8 [ 1 1 1 1], L_0x566bec3c0780, L_0x566bec3c0930, L_0x566bec3c0aa0, L_0x566bec3c0d30;
+    .scope S_0x566bec3ab190;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "decoder2to4.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x566bec3ab190 {0 0 0};
+    %vpi_call 2 12 "$monitor", "Time=%0t | a=%b b=%b |y=%b", $time, v0x566bec3c03b0_0, v0x566bec3c0450_0, v0x566bec3c0520_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x566bec3c03b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x566bec3c0450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x566bec3c03b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x566bec3c0450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x566bec3c03b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x566bec3c0450_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x566bec3c03b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x566bec3c0450_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_decoder2to4.v";
+    "decoder2to4.v";
