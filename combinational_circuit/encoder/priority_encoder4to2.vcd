@@ -1,0 +1,63 @@
+$date
+	Tue Oct 20 09:41:49 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_priority_encoder4to2 $end
+$var wire 2 ! y [1:0] $end
+$var wire 1 " v $end
+$var reg 4 # d [3:0] $end
+$scope module dut $end
+$var wire 4 $ d [3:0] $end
+$var wire 1 " v $end
+$var wire 2 % y [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 %
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10
+1"
+b1 #
+b1 $
+#20
+b1 !
+b1 %
+b10 #
+b10 $
+#30
+b11 #
+b11 $
+#40
+b10 !
+b10 %
+b100 #
+b100 $
+#50
+b111 #
+b111 $
+#60
+b11 !
+b11 %
+b1000 #
+b1000 $
+#70
+b1100 #
+b1100 $
+#80
+b1111 #
+b1111 $
+#90
