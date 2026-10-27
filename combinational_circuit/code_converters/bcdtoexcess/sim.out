@@ -1,0 +1,54 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x64fec904e930 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x64fec904eac0 .scope module, "tb_bcd_to_excess3" "tb_bcd_to_excess3" 3 1;
+ .timescale 0 0;
+v0x64fec9060010_0 .var "bcd", 3 0;
+v0x64fec9060100_0 .net "ex3", 3 0, L_0x64fec90602d0;  1 drivers
+v0x64fec90601d0_0 .var/i "i", 31 0;
+S_0x64fec9015490 .scope module, "uut" "bcd_to_excess3" 3 7, 4 1 0, S_0x64fec904eac0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "bcd";
+    .port_info 1 /OUTPUT 4 "ex3";
+L_0x7098939b7018 .functor BUFT 1, C4<0011>, C4<0>, C4<0>, C4<0>;
+v0x64fec9015670_0 .net/2u *"_ivl_0", 3 0, L_0x7098939b7018;  1 drivers
+v0x64fec905fe10_0 .net "bcd", 3 0, v0x64fec9060010_0;  1 drivers
+v0x64fec905fef0_0 .net "ex3", 3 0, L_0x64fec90602d0;  alias, 1 drivers
+L_0x64fec90602d0 .arith/sum 4, v0x64fec9060010_0, L_0x7098939b7018;
+    .scope S_0x64fec904eac0;
+T_0 ;
+    %vpi_call/w 3 13 "$monitor", "BCD=%b Excess3=%b", v0x64fec9060010_0, v0x64fec9060100_0 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x64fec90601d0_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v0x64fec90601d0_0;
+    %cmpi/s 10, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/vec4 v0x64fec90601d0_0;
+    %pad/s 4;
+    %store/vec4 v0x64fec9060010_0, 0, 4;
+    %delay 10, 0;
+    %load/vec4 v0x64fec90601d0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x64fec90601d0_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call/w 3 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb_bcd_to_excess3.v";
+    "bcd_to_excess3.v";
