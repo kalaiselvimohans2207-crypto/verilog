@@ -1,0 +1,60 @@
+$date
+	Tue Oct 27 06:28:59 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_subtractor8bit $end
+$var wire 8 ! Difference [7:0] $end
+$var wire 1 " Borrow $end
+$var reg 8 # A [7:0] $end
+$var reg 8 $ B [7:0] $end
+$scope module dut $end
+$var wire 8 % A [7:0] $end
+$var wire 8 & B [7:0] $end
+$var wire 8 ' Difference [7:0] $end
+$var wire 1 " Borrow $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b101 '
+b101 &
+b1010 %
+b101 $
+b1010 #
+0"
+b101 !
+$end
+#10000
+1"
+b11111011 !
+b11111011 '
+b1010 $
+b1010 &
+b101 #
+b101 %
+#20000
+b0 !
+b0 '
+0"
+b10100 $
+b10100 &
+b10100 #
+b10100 %
+#30000
+b11111111 !
+b11111111 '
+1"
+b1 $
+b1 &
+b0 #
+b0 %
+#40000
