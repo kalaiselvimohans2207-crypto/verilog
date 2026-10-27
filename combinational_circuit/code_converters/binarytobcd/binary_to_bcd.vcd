@@ -1,0 +1,87 @@
+$date
+	Tue Oct 27 04:31:11 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_binary_to_bcd $end
+$var wire 4 ! tens [3:0] $end
+$var wire 4 " ones [3:0] $end
+$var wire 4 # hundreds [3:0] $end
+$var reg 8 $ binary [7:0] $end
+$scope module uut $end
+$var wire 8 % binary [7:0] $end
+$var reg 4 & hundreds [3:0] $end
+$var reg 4 ' ones [3:0] $end
+$var reg 4 ( tens [3:0] $end
+$var integer 32 ) decimal_value [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+b1001 "
+b1001 '
+b1001 )
+b1001 $
+b1001 %
+#20000
+b101 "
+b101 '
+b1 !
+b1 (
+b1111 )
+b1111 $
+b1111 %
+#30000
+b10 !
+b10 (
+b11001 )
+b11001 $
+b11001 %
+#40000
+b1001 "
+b1001 '
+b1001 !
+b1001 (
+b1100011 )
+b1100011 $
+b1100011 %
+#50000
+b11 "
+b11 '
+b10 !
+b10 (
+b1 #
+b1 &
+b1111011 )
+b1111011 $
+b1111011 %
+#60000
+b101 "
+b101 '
+b101 !
+b101 (
+b10 #
+b10 &
+b11111111 )
+b11111111 $
+b11111111 %
+#70000
