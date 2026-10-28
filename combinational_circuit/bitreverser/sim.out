@@ -1,0 +1,60 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5ea159189fc0 .scope module, "tb_bit_reverser" "tb_bit_reverser" 2 1;
+ .timescale 0 0;
+v0x5ea15919da70_0 .var "a", 3 0;
+v0x5ea15919db30_0 .net "y", 3 0, L_0x5ea15919de90;  1 drivers
+S_0x5ea15918a150 .scope module, "dut" "bit_reverser" 2 6, 3 1 0, S_0x5ea159189fc0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 4 "y";
+v0x5ea159175bd0_0 .net *"_ivl_11", 0 0, L_0x5ea15919ddc0;  1 drivers
+v0x5ea159176220_0 .net *"_ivl_16", 0 0, L_0x5ea15919e080;  1 drivers
+v0x5ea159176870_0 .net *"_ivl_3", 0 0, L_0x5ea15919dc00;  1 drivers
+v0x5ea15919d720_0 .net *"_ivl_7", 0 0, L_0x5ea15919dd20;  1 drivers
+v0x5ea15919d800_0 .net "a", 3 0, v0x5ea15919da70_0;  1 drivers
+v0x5ea15919d930_0 .net "y", 3 0, L_0x5ea15919de90;  alias, 1 drivers
+L_0x5ea15919dc00 .part v0x5ea15919da70_0, 0, 1;
+L_0x5ea15919dd20 .part v0x5ea15919da70_0, 1, 1;
+L_0x5ea15919ddc0 .part v0x5ea15919da70_0, 2, 1;
+L_0x5ea15919de90 .concat8 [ 1 1 1 1], L_0x5ea15919e080, L_0x5ea15919ddc0, L_0x5ea15919dd20, L_0x5ea15919dc00;
+L_0x5ea15919e080 .part v0x5ea15919da70_0, 3, 1;
+    .scope S_0x5ea159189fc0;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "bit_reverser.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5ea159189fc0 {0 0 0};
+    %vpi_call 2 15 "$monitor", "time=%0t a=%b y=%b", $time, v0x5ea15919da70_0, v0x5ea15919db30_0 {0 0 0};
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 13, 0, 4;
+    %store/vec4 v0x5ea15919da70_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_bit_reverser.v";
+    "bit_reverser.v";
