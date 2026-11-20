@@ -1,0 +1,114 @@
+$date
+	Fri Nov 20 09:47:26 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_alu $end
+$var wire 8 ! sum [7:0] $end
+$var wire 8 " diff [7:0] $end
+$var reg 8 # a [7:0] $end
+$var reg 8 $ b [7:0] $end
+$var reg 1 % sel $end
+$scope module dut $end
+$var wire 8 & a [7:0] $end
+$var wire 8 ' b [7:0] $end
+$var wire 1 % sel $end
+$var reg 8 ( diff [7:0] $end
+$var reg 8 ) sum [7:0] $end
+$scope function add $end
+$var reg 8 * x [7:0] $end
+$var reg 8 + y [7:0] $end
+$upscope $end
+$scope task sub $end
+$var reg 8 , result [7:0] $end
+$var reg 8 - x [7:0] $end
+$var reg 8 . y [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx .
+bx -
+bx ,
+b10100 +
+b1010 *
+b11110 )
+b0 (
+b10100 '
+b1010 &
+0%
+b10100 $
+b1010 #
+b0 "
+b11110 !
+$end
+#10
+b10100 "
+b10100 (
+b10100 ,
+b11110 .
+b110010 -
+b0 !
+b0 )
+b11110 $
+b11110 '
+b110010 #
+b110010 &
+1%
+#20
+b0 "
+b0 (
+b1100100 !
+b1100100 )
+b1011010 +
+b1011010 $
+b1011010 '
+b1010 #
+b1010 &
+0%
+#30
+b11101100 "
+b11101100 (
+b11101100 ,
+b1000110 .
+b0 !
+b0 )
+b1000110 $
+b1000110 '
+b110010 #
+b110010 &
+1%
+#40
+b0 "
+b0 (
+b1011010 !
+b1011010 )
+b1010000 +
+b1010000 $
+b1010000 '
+b1010 #
+b1010 &
+0%
+#50
+b11110 "
+b11110 (
+b11110 ,
+b11001 .
+b110111 -
+b0 !
+b0 )
+b11001 $
+b11001 '
+b110111 #
+b110111 &
+1%
+#60
